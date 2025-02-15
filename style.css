@@ -10,7 +10,7 @@
         #section {
             width: 100vw;
             height: 100vh;
-            background-image: url('background.jpg');
+            background-image: url('https://raw.githubusercontent.com/edmark1434/MyWebsiteFiles/main/background_quote.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -107,4 +107,8 @@
         }
         #title{
             padding:40px 20px;
+        }
+        #add_cities{
+            text-align: center;
+            padding: 5px;
         }

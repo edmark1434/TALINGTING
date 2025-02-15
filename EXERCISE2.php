@@ -20,25 +20,23 @@
         //fuction sorting cities
         function sortCities($cities){
             sort($cities);
-            listCities($cities);
-        }
-        //for the display of original set of cities
-        function printCities($cities){
-            foreach ($cities as $city){
-                echo $city;
-                if($city !=end($cities)){
-                    echo ", ";
-                }
-            }
-        }
-        //for creating unordered list
-        function listCities($cities){
-             // print it with unordered list
             echo "<ul class='unordered_list'>";
             foreach ($cities as $city){
                 echo "<li>{$city}</li>";
             }
             echo "</ul>";
+        }
+        //for the display of original set of cities
+        function printCities($cities){
+                $count = 0;
+                foreach ($cities as $city){
+                    $count++;
+                    echo $city;
+                    if($city !=end($cities)){
+                        echo ", ";
+                    }
+                    if(count($cities)>10 && $count%3===0){echo "<br>";}
+                }
         }
     ?>
 
@@ -57,10 +55,12 @@
                 </div>
                 <div class="list_box">
                     <p class="display_description">Adding New Cities</p>
-                    <?php 
-                        array_push($largestCities, "Los Angeles", "Calcutta", "Osaka", "Beijing");
-                        listCities($largestCities);
-                    ?>
+                    <p id="add_cities">
+                        <?php 
+                            array_push($largestCities, "Los Angeles", "Calcutta", "Osaka", "Beijing");
+                            printCities($largestCities);
+                        ?>
+                    </p>
                 </div>
                 <div class="list_box">
                     <p class="display_description">Sorted Final Cities</p>
